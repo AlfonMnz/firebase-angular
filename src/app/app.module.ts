@@ -12,7 +12,7 @@ import {HeaderComponent} from './header/header.component';
 import {HomeComponent} from './body/home/home.component';
 import {FooterComponent} from './footer/footer.component';
 import {TasksComponent} from './body/tasks/tasks.component';
-
+import {TaskService} from './services/task.service';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
         AngularFireModule.initializeApp(environment.firebase),
         RouterModule.forRoot(appRoutes, {enableTracing: false})
     ],
-    providers: [],
+    providers: [TaskService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
